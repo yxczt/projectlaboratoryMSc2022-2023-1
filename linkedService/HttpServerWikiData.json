@@ -1,0 +1,13 @@
+{
+	"name": "HttpServerWikiData",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

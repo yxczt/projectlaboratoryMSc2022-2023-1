@@ -1,0 +1,9 @@
+{
+	"name": "wikidatafactory-ro7zc0",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8afd46c0-3198-4890-9569-6e8ce86487a6",
+		"tenantId": "6a3548ab-7570-4271-91a8-58da00697029"
+	}
+}
