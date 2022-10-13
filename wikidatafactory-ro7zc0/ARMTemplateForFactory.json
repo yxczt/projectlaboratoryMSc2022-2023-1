@@ -43,7 +43,7 @@
 								"type": "BinarySource",
 								"storeSettings": {
 									"type": "HttpReadSettings",
-									"maxConcurrentConnections": 4,
+									"maxConcurrentConnections": 1,
 									"requestMethod": "GET",
 									"requestTimeout": ""
 								},
@@ -55,7 +55,7 @@
 								"type": "BinarySink",
 								"storeSettings": {
 									"type": "AzureBlobStorageWriteSettings",
-									"maxConcurrentConnections": 4,
+									"maxConcurrentConnections": 1,
 									"blockSizeInMB": 100
 								}
 							},
