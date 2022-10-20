@@ -1,0 +1,22 @@
+{
+	"name": "BinaryActualBZ2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageRO7ZC0",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "4b652fee-9cc1-46f0-b121-22480129efbd",
+				"container": "compressed-bz2"
+			},
+			"compression": {
+				"type": "bzip2",
+				"level": "Optimal"
+			}
+		}
+	}
+}
