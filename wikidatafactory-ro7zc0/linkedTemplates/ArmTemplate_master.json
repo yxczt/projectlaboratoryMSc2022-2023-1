@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageRO7ZC0'"
 		},
+		"CosmosDb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDb1'"
+		},
 		"HttpServerWikiData_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2"
@@ -44,6 +48,9 @@
 					},
 					"AzureBlobStorageRO7ZC0_connectionString": {
 						"value": "[parameters('AzureBlobStorageRO7ZC0_connectionString')]"
+					},
+					"CosmosDb1_connectionString": {
+						"value": "[parameters('CosmosDb1_connectionString')]"
 					},
 					"HttpServerWikiData_properties_typeProperties_url": {
 						"value": "[parameters('HttpServerWikiData_properties_typeProperties_url')]"

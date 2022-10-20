@@ -8,6 +8,9 @@
 		"AzureBlobStorageRO7ZC0_connectionString": {
 			"value": ""
 		},
+		"CosmosDb1_connectionString": {
+			"value": ""
+		},
 		"HttpServerWikiData_properties_typeProperties_url": {
 			"value": "https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2"
 		},
