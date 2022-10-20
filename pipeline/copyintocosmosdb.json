@@ -16,33 +16,41 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "BinarySource",
+						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
+							"maxConcurrentConnections": 1,
 							"recursive": true,
-							"deleteFilesAfterCompletion": false
+							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "BinaryReadSettings"
+							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
-						"type": "CosmosDbSqlApiSink",
-						"writeBehavior": "upsert",
-						"disableMetricsCollection": false,
-						"maxConcurrentConnections": 1
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"maxConcurrentConnections": 1,
+							"copyBehavior": "FlattenHierarchy",
+							"blockSizeInMB": 100
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "setOfObjects"
+						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "BinaryActualBZ2",
+						"referenceName": "JsonBZipped",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "CosmosDbSqlApiCollection1",
+						"referenceName": "Json1",
 						"type": "DatasetReference"
 					}
 				]
