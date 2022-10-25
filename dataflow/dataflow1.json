@@ -26,7 +26,7 @@
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'documentPerLine') ~> blobsource",
+				"     documentForm: 'arrayOfDocuments') ~> blobsource",
 				"blobsource sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
