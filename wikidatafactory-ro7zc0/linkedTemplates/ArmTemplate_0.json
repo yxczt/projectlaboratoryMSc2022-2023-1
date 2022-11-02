@@ -148,7 +148,7 @@
 				"type": "CosmosDbSqlApiCollection",
 				"schema": {},
 				"typeProperties": {
-					"collectionName": "all_unziped"
+					"collectionName": "test_unziped"
 				}
 			},
 			"dependsOn": [
@@ -357,9 +357,9 @@
 				"typeProperties": {
 					"sources": [
 						{
-							"dataset": {
-								"referenceName": "Json1",
-								"type": "DatasetReference"
+							"linkedService": {
+								"referenceName": "AzureBlobStorageRO7ZC0",
+								"type": "LinkedServiceReference"
 							},
 							"name": "blobsource"
 						}
@@ -375,10 +375,15 @@
 					],
 					"transformations": [],
 					"scriptLines": [
-						"source(allowSchemaDrift: true,",
+						"source(useSchema: false,",
+						"     allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     limit: 1,",
 						"     ignoreNoFilesFound: false,",
-						"     documentForm: 'arrayOfDocuments') ~> blobsource",
+						"     format: 'json',",
+						"     container: 'decompressed-wikidata',",
+						"     fileName: 'data_b7325b9c-dd2f-4a8f-989a-0f0c8c0a0d09_70968a9a-624f-4fea-9d2b-6de7ee0610b3.json',",
+						"     documentForm: 'documentPerLine') ~> blobsource",
 						"blobsource sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     deletable:false,",
@@ -395,7 +400,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Json1')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageRO7ZC0')]",
 				"[concat(variables('factoryId'), '/datasets/CosmosDbSqlApiCollection1')]"
 			]
 		},
