@@ -9,7 +9,7 @@
 		"type": "CosmosDbSqlApiCollection",
 		"schema": {},
 		"typeProperties": {
-			"collectionName": "all_unziped"
+			"collectionName": "test_unziped"
 		}
 	}
 }
