@@ -14,9 +14,9 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "CosmosDbSqlApiCollection1",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "CosmosDb1",
+						"type": "LinkedServiceReference"
 					},
 					"name": "sink1"
 				}
@@ -26,19 +26,21 @@
 				"source(useSchema: false,",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     limit: 10,",
+				"     limit: 5,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'json',",
 				"     container: 'decompressed-wikidata',",
-				"     fileName: 'sample.txt',",
+				"     fileName: 'data_b7325b9c-dd2f-4a8f-989a-0f0c8c0a0d09_70968a9a-624f-4fea-9d2b-6de7ee0610b3.json',",
 				"     documentForm: 'documentPerLine') ~> source1",
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
 				"     format: 'document',",
+				"     container: 'test_unziped',",
+				"     deletable: false,",
+				"     insertable: true,",
+				"     updateable: false,",
+				"     upsertable: false,",
+				"     store: 'cosmosDB',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
