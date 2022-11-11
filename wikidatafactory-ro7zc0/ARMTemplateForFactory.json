@@ -429,7 +429,7 @@
 						"     ignoreNoFilesFound: false,",
 						"     format: 'json',",
 						"     container: 'decompressed-wikidata',",
-						"     fileName: 'data_b7325b9c-dd2f-4a8f-989a-0f0c8c0a0d09_70968a9a-624f-4fea-9d2b-6de7ee0610b3.json',",
+						"     fileName: 'sample.txt',",
 						"     documentForm: 'documentPerLine') ~> source1",
 						"source1 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
@@ -446,6 +446,29 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageRO7ZC0')]",
 				"[concat(variables('factoryId'), '/datasets/CosmosDbSqlApiCollection1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Binary3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorageRO7ZC0",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "data_b7325b9c-dd2f-4a8f-989a-0f0c8c0a0d09_70968a9a-624f-4fea-9d2b-6de7ee0610b3.json",
+						"container": "decompressed-wikidata"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageRO7ZC0')]"
 			]
 		}
 	]
