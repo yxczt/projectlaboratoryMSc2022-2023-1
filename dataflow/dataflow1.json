@@ -35,11 +35,12 @@
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'document',",
-				"     container: 'test_unziped',",
+				"     container: 'test',",
 				"     deletable: false,",
 				"     insertable: true,",
 				"     updateable: false,",
 				"     upsertable: false,",
+				"     batchSize: 100,",
 				"     store: 'cosmosDB',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
